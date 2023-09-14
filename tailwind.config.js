@@ -5,7 +5,7 @@ module.exports = {
   //    './App.{js,jsx,ts,tsx}',
   //    './<custom directory>/**/*.{js,jsx,ts,tsx}',
   //  ],
-  content: ['./app/Index.tsx', './app/**/*.tsx', './<custom directory>/**/*.{js,jsx,ts,tsx}'],
+  content: ['./app/Index.tsx', './app/**/*.tsx', '_layout.tsx', './<custom directory>/**/*.{js,jsx,ts,tsx}'],
   theme: {
     extend: {
       fontFamily: {

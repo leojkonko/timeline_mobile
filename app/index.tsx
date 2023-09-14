@@ -5,26 +5,14 @@ import { TouchableOpacity } from 'react-native';
 import * as SecureStore from 'expo-secure-store'
 import { err } from 'react-native-svg/lib/typescript/xml';
 import { styled } from 'nativewind';
-import { useEffect } from 'react';
+import React, { useEffect } from 'react';
 import { makeRedirectUri, useAuthRequest } from 'expo-auth-session';
-import { useRouter } from 'expo-router';
-
-import {
-  useFonts,
-  Roboto_400Regular,
-  Roboto_700Bold
-} from '@expo-google-fonts/roboto';
-
-import {
-  BaiJamjuree_700Bold
-} from '@expo-google-fonts/bai-jamjuree';
-
+import { SplashScreen, useRouter } from 'expo-router';
 import blurBg from "../src/assets/bg-blur.png";
 import Stripes from '../src/assets/stripes.svg';
 import Logo from '../src/assets/logo.svg';
 import { api } from '../src/lib/api';
-
- 
+import { Link, Stack } from 'expo-router'; 
 
 // Endpoint
 const discovery = {
@@ -39,11 +27,6 @@ export default function App() {
 
     const router = useRouter()
 
-  const [hasLoadedFonts] = useFonts({
-    Roboto_400Regular, 
-    Roboto_700Bold,
-    BaiJamjuree_700Bold
-  });
 
   const [request, response, singInWithGithub] = useAuthRequest(
     {
@@ -86,27 +69,30 @@ export default function App() {
     }
   }, [response]);
 
-  if (!hasLoadedFonts) {
-    return null;
-  }
+
 
   return (
-    <ImageBackground source={blurBg} style={styles.container} className='relative flex-1 items-center bg-gray-950 px-8 py-10' imageStyle={{ position: 'absolute', left: '-100%' }}> 
-      <Text className='font-title text-center text-2xl text-red-50 leading-tight'>Sua cápsula do tempo</Text>
-      <StyledStripes className='absolute left-2' />
-      <View className='flex-1 items-center justify-center gap-6'>
-        <Logo />
-        <View className='space-y-2'>
-          <Text className='font-title text-center text-2xl text-gray-50 leading-tight'>Sua cápsula do tempo</Text>
-          <Text className='text-gray-100 text-center font-body text-base leading-relaxed'>Colecione momentos marcantes da sua jornada e compartilhe (se quiser) com o mundo!</Text>
+    <ImageBackground source={blurBg} style={styles.container} className='relative flex-1 items-center bg-gray-950 pt-10' imageStyle={{ position: 'absolute', left: '-100%' }}> 
+    <StyledStripes className='absolute left-2' />
+    <StatusBar style="light" translucent />
+    
+      <View style={styles.container} className='flex-1 items-center px-8 py-10'> 
+        <Text className='font-title text-center text-2xl text-red-50 leading-tight'>Sua cápsula do tempo</Text>
+        <View className='flex-1 items-center justify-center gap-6'>
+          <Logo />
+          <View className='space-y-2'>
+            <Text className='font-title text-center text-2xl text-gray-50 leading-tight'>Sua cápsula do tempo</Text>
+            <Text className='text-gray-100 text-center font-body text-base leading-relaxed'>Colecione momentos marcantes da sua jornada e compartilhe (se quiser) com o mundo!</Text>
+          </View>
+          <TouchableOpacity activeOpacity={0.7} className='bg-green-600 rounded-full px-5 py-3' onPress={() => singInWithGithub()}>
+            <Text className='font-alt uppercase text-black text-sm '>Cadastrar lembrança</Text>
+          </TouchableOpacity>
         </View>
-        <TouchableOpacity activeOpacity={0.7} className='bg-green-600 rounded-full px-5 py-3' onPress={() => singInWithGithub()}>
-          <Text className='font-alt uppercase text-black text-sm '>Cadastrar lembrança</Text>
-        </TouchableOpacity>
+        <Text className='text-center font-body text-sm leading-relaxed text-gray-200'>Feito com 💜 no NLW da Rocketseat</Text>
+        <StatusBar style="light" translucent />
       </View>
-      <Text className='text-center font-body text-sm leading-relaxed text-gray-200'>Feito com 💜 no NLW da Rocketseat</Text>
-      <StatusBar style="light" translucent />
-    </ImageBackground>
+  
+  </ImageBackground>
     
   );
 } 
