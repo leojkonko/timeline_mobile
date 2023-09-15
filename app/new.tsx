@@ -1,5 +1,5 @@
 import { Link, Stack, useLocalSearchParams, useRouter } from "expo-router";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { ImageBackground, TouchableOpacity, View } from "react-native";
 import { Text, Image } from "react-native";
 import blurBg from "../src/assets/bg-blur.png";
@@ -81,6 +81,7 @@ export default function NewMemories(){
           
               router.push('/memories')
     }
+
     return (
         <ScrollView className='relative flex-1 bg-gray-950 '>
             <ImageBackground source={blurBg} className='relative flex-1 bg-gray-950 ' imageStyle={{ position: 'absolute', left: '-100%' }}> 
@@ -100,7 +101,7 @@ export default function NewMemories(){
                         <View className="flex-row items-center gap-2">
                             <Switch value={isPublic} onValueChange={setIsPublic} thumbColor={isPublic ? '#9b79ea' : '#9e9ea0'} trackColor={{ false: '#767577', true: '#372560' }} />
                             <Text className="font-body text-base text-gray-200">
-                                Tornar memória pública
+                                Tornar memória públicaaa
                             </Text>
                         </View>
                         <TouchableOpacity activeOpacity={0.7} className="h-32 justify-center rounded-lg border border-dashed border-gray-500 bg-black/20" onPress={openImagePicker}>

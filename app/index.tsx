@@ -77,7 +77,7 @@ export default function App() {
     <StatusBar style="light" translucent />
     
       <View style={styles.container} className='flex-1 items-center px-8 py-10'> 
-        <Text className='font-title text-center text-2xl text-red-50 leading-tight'>Sua cápsula do tempo</Text>
+        <Text className='font-title text-center text-2xl text-red-50 leading-tight'>Sua cápsulaa a do tempo</Text>
         <View className='flex-1 items-center justify-center gap-6'>
           <Logo />
           <View className='space-y-2'>
