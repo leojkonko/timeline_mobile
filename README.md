@@ -8,7 +8,7 @@ In this project you can save your memories through your journey.
 Layout in Figma: [Layout](https://www.figma.com/file/n3iGB8MJOUiBPXs5DIjAuZ/C%C3%A1psula-do-tempo-%E2%80%A2-Trilha-Ignite-(Community)?node-id=0%3A1&mode=dev)
 
 ## Table of Contents
-
+ 
 - [Pré-requisitos](#pré-requisitos)
 - [Instalação](#instalação)
 - [Licença](#licença)
