@@ -14,6 +14,7 @@ import * as ImagePicker from 'expo-image-picker';
 import * as SecureStore from 'expo-secure-store';
 import { api } from "../src/lib/api";
 import dayjs from "dayjs";
+import { useNavigation } from '@react-navigation/native';
 
 const StyledStripes = styled(Stripes);
 
@@ -31,7 +32,7 @@ export default function NewMemories(){
 
    async function signOut(){
        await SecureStore.deleteItemAsync('token')
-       router.push('/index')
+       //router.push('/index')
     }
 
     async function loadMemories(){
@@ -85,7 +86,7 @@ export default function NewMemories(){
                                             <Image className="aspect-video w-full rounded-lg" alt="" source={{ uri: memory.coverUrl }}></Image>
                                         </View>
                                         <Text className="font-body text-base leading-relaxed text-gray-100">{memory.excerpt}</Text>
-                                        <Link href="/memories/id">
+                                        <Link href={`/details?param=${memory.id}`} asChild>
                                             <TouchableOpacity className="flex-row items-center">
                                                 <Text className="font-body text-sm text-gray-200 mr-2">
                                                 Ler mais

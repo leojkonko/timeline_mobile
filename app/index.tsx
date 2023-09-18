@@ -40,6 +40,7 @@ export default function App() {
   );
 
    async function handleGithubOAuthCode(code: string){
+    console.log('oi')
     const response = await api.post('/register', {
             code,
           })
@@ -47,7 +48,7 @@ export default function App() {
           const { token } = response.data
              //console.log(token)
            await SecureStore.setItemAsync('token', token)
-          
+           
            router.push('/memories')
     }
 
@@ -70,14 +71,13 @@ export default function App() {
   }, [response]);
 
 
-
   return (
     <ImageBackground source={blurBg} style={styles.container} className='relative flex-1 items-center bg-gray-950 pt-10' imageStyle={{ position: 'absolute', left: '-100%' }}> 
     <StyledStripes className='absolute left-2' />
     <StatusBar style="light" translucent />
     
       <View style={styles.container} className='flex-1 items-center px-8 py-10'> 
-        <Text className='font-title text-center text-2xl text-red-50 leading-tight'>Sua cápsulaa a do tempo</Text>
+        <Text className='font-title text-center text-2xl text-red-50 leading-tight'>Sua cápsula a do tempo</Text>
         <View className='flex-1 items-center justify-center gap-6'>
           <Logo />
           <View className='space-y-2'>
