@@ -25,6 +25,7 @@ Antes de começar, certifique-se de ter instalado os seguintes requisitos:
 🚀 Technologies
 
 - [ReactJS](https://react.dev/)
+- [REact native](https://reactnative.dev/)
 - [Node.js](https://nodejs.org/)
 - [npm](https://www.npmjs.com/)
 - [TypeScript](https://www.typescriptlang.org/)
