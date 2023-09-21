@@ -49,8 +49,8 @@ git clone https://github.com/leojkonko/timeline_web.git
 ```bash
 npm run dev
 ```
-3. Navegue até o diretório Front-end para iniciar a aplicação:
+3. Navegue até o diretório mobile para iniciar a aplicação:
 
 ```bash
-npm run dev
+npm run start
 ```
