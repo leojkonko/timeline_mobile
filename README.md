@@ -10,7 +10,7 @@ Layout in Figma: [Layout](https://www.figma.com/file/n3iGB8MJOUiBPXs5DIjAuZ/C%C3
 ## Table of Contents
  
 - [Pré-requisitos](#pré-requisitos)
-- [Instalação](#instalação)
+- [Instalação](#instalação) 
 - [Licença](#licença)
 
 ## Pré-requisitos
